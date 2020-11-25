@@ -2,14 +2,25 @@
   "name": "redbox-language-editor",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
   "dependencies": {
+    "@mdi/js": "^5.8.55",
+    "@mdi/react": "^1.4.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "@tinymce/tinymce-react": "^3.8.1",
     "react": "^17.0.1",
+    "react-bootstrap": "^1.4.0",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.1",
-    "web-vitals": "^0.2.4"
+    "web-vitals": "^0.2.4",
+    "xlsx": "^0.16.9"
+  },
+  "devDependencies": {
+    "husky": "^4.3.0",
+    "lint-staged": "^10.4.0",
+    "prettier": "^2.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -22,6 +33,19 @@
       "react-app",
       "react-app/jest"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,json,html,scss,css,md}": "prettier --write"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "semi": false,
+    "arrowParens": "avoid"
   },
   "browserslist": {
     "production": [

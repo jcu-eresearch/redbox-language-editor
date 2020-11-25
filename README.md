@@ -2,6 +2,12 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Code standards
+
+All code written in this project is linted via `eslint` and its default
+configuration with CRA and formatting is carried out automatically on commit
+via `prettier`.
+
 ## Available Scripts
 
 In the project directory, you can run:
