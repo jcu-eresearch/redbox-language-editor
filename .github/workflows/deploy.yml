@@ -1,4 +1,4 @@
-name: MasterDeployCI
+name: Deploy-GitHubPages
 on:
   push:
     branches:
