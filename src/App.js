@@ -247,6 +247,7 @@ function App() {
                         <Form.Control
                           className="position-sticky"
                           type="text"
+                          placeholder={sheet[0][0]}
                           value={row[0]}
                           onChange={e =>
                             updateCell(rowIndex + 1, 0, e.target.value)
@@ -268,6 +269,7 @@ function App() {
                             <Col>
                               <Form.Control
                                 type="text"
+                                placeholder={sheet[0][1]}
                                 value={row[1]}
                                 onChange={e =>
                                   updateCell(rowIndex + 1, 1, e.target.value)
