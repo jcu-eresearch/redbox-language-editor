@@ -19,7 +19,7 @@ import {
 } from '@mdi/js'
 import XLSX from 'xlsx'
 
-import tinymce from 'tinymce/tinymce'
+import tinymce from 'tinymce/tinymce' // eslint-disable-line no-unused-vars
 import 'tinymce/icons/default'
 import 'tinymce/themes/silver'
 import 'tinymce/plugins/autoresize'
@@ -76,9 +76,7 @@ function VisualEditor(props) {
           'help',
         ],
         toolbar:
-          'undo redo searchreplace | formatselect | bold italic | \
-             alignleft aligncenter alignright alignjustify | \
-             bullist numlist outdent indent | link | removeformat | code | help',
+          'undo redo searchreplace | formatselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link | removeformat | code | help',
       }}
       {...props}
     />
