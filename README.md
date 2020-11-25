@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# ReDBox Language Editor
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
