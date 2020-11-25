@@ -5,6 +5,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 This project automatically deploys itself to GitHub Pages via GitHub Actions
 to be hosted at https://jcu-eresearch.github.io/redbox-language-editor/.
 
+## Setup
+
+Clone this repository and run `yarn` to set up the environment.
+
+To start the development server, run `yarn start`.
+
+To deploy, commit your changes and push to GitHub to start the automatic
+deployment process.
+
 ## Code standards
 
 All code written in this project is linted via `eslint` and its default
