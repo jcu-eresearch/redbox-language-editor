@@ -10,7 +10,7 @@ jobs:
       matrix:
         node-version: [12.x]
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
@@ -21,5 +21,5 @@ jobs:
       run: |
         git config --global user.email "${{ github.actor }}@users.noreply.github.com"
         git config --global user.name "${{ github.actor }}"
-        git remote set-url origin "https://${{ github.token }}@github.com/${{ github.repository }}.git"
+        git remote set-url origin "https://${{ github.actor }}:${{ github.token }}@github.com/${{ github.repository }}.git"
         yarn deploy
