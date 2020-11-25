@@ -2,6 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+This project automatically deploys itself to GitHub Pages via GitHub Actions
+to be hosted at https://jcu-eresearch.github.io/redbox-language-editor/.
+
 ## Code standards
 
 All code written in this project is linted via `eslint` and its default
