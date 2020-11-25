@@ -18,6 +18,8 @@ jobs:
     - name: Install Packages
       run: yarn
     - name: Deploy to GH Pages
-      run: yarn deploy
-    - name: Updating Domain
-      run: echo "Update domain"
+      run: |
+        git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+        git config --global user.name "${{ github.actor }}"
+        git remote set-url origin "https://${{ github.token }}@github.com/${{ github.repository }}.git"
+        yarn deploy
