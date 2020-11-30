@@ -222,14 +222,8 @@ function App() {
               <Dropdown.Item onClick={() => downloadSheet('xlsx')}>
                 Excel 2007 (.xlsx)
               </Dropdown.Item>
-              <Dropdown.Item onClick={() => downloadSheet('xls')}>
-                Excel (.xls)
-              </Dropdown.Item>
               <Dropdown.Item onClick={() => downloadSheet('csv')}>
                 CSV (.csv)
-              </Dropdown.Item>
-              <Dropdown.Item onClick={() => downloadSheet('ods')}>
-                ODS (.ods)
               </Dropdown.Item>
             </DropdownButton>
           </Col>
