@@ -16,6 +16,7 @@ import {
   mdiFileUploadOutline,
   mdiFileDownloadOutline,
   mdiPencil,
+  mdiGithub,
 } from '@mdi/js'
 import XLSX from 'xlsx'
 
@@ -148,7 +149,10 @@ function App() {
   return (
     <div className="App">
       <Container fluid>
-        <Row className="fixed-top mb-3 p-1 justify-content-between align-items-center border-bottom bg-white shadow">
+        <Row
+          as="header"
+          className="fixed-top mb-3 p-1 justify-content-between align-items-center border-bottom bg-white shadow"
+        >
           <Col xs={{ span: 'auto', order: 3 }} lg={{ span: 'auto', order: 1 }}>
             <Button
               variant="outline-secondary"
@@ -230,7 +234,7 @@ function App() {
             </DropdownButton>
           </Col>
         </Row>
-        <Row className="pt-5">
+        <Row as="main" className="mt-5 mb-3">
           <Col>
             <Table striped bordered>
               <thead>
