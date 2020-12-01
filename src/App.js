@@ -233,70 +233,79 @@ function App() {
             <Table striped bordered>
               <thead>
                 <tr>
+                  <th style={{ width: '1%' }}>Row</th>
                   <th className="w-25">{sheet[0][0]}</th>
                   <th>{sheet[0][1]}</th>
                 </tr>
               </thead>
               <tbody>
                 {sheet &&
-                  sheet.slice(1).map((row, rowIndex) => (
-                    <tr key={rowIndex + 1}>
-                      <td>
-                        <Form.Control
-                          className="position-sticky"
-                          type="text"
-                          placeholder={sheet[0][0]}
-                          value={row[0]}
-                          onChange={e =>
-                            updateCell(rowIndex + 1, 0, e.target.value)
-                          }
-                        />
-                      </td>
-                      <td>
-                        {rowMetadata &&
-                        rowMetadata[rowIndex + 1] &&
-                        rowMetadata[rowIndex + 1].html ? (
-                          <VisualEditor
-                            value={row[1]}
-                            onEditorChange={content =>
-                              updateCell(rowIndex + 1, 1, content)
+                  sheet.slice(1).map((row, rowIndex) => {
+                    const sheetRowIndex = rowIndex + 1
+                    return (
+                      <tr key={sheetRowIndex}>
+                        <td className="text-center">
+                          <code>{sheetRowIndex}</code>
+                        </td>
+                        <td>
+                          <Form.Control
+                            className="position-sticky"
+                            type="text"
+                            placeholder={sheet[0][0]}
+                            value={row[0]}
+                            onChange={e =>
+                              updateCell(sheetRowIndex, 0, e.target.value)
                             }
                           />
-                        ) : (
-                          <Form.Row>
-                            <Col>
-                              <Form.Control
-                                type="text"
-                                placeholder={sheet[0][1]}
-                                value={row[1]}
-                                onChange={e =>
-                                  updateCell(rowIndex + 1, 1, e.target.value)
-                                }
-                                onFocus={() =>
-                                  isHTML(row[1]) &&
-                                  enableVisualEditor(rowIndex + 1)
-                                }
-                              />
-                            </Col>
-                            <Col xs="auto">
-                              <Button
-                                variant="outline-primary"
-                                onClick={() => enableVisualEditor(rowIndex + 1)}
-                              >
-                                <Icon
-                                  path={mdiPencil}
-                                  title="Edit"
-                                  size={1}
-                                  className="mr-1"
+                        </td>
+                        <td>
+                          {rowMetadata &&
+                          rowMetadata[sheetRowIndex] &&
+                          rowMetadata[sheetRowIndex].html ? (
+                            <VisualEditor
+                              value={row[1]}
+                              onEditorChange={content =>
+                                updateCell(sheetRowIndex, 1, content)
+                              }
+                            />
+                          ) : (
+                            <Form.Row>
+                              <Col>
+                                <Form.Control
+                                  type="text"
+                                  placeholder={sheet[0][1]}
+                                  value={row[1]}
+                                  onChange={e =>
+                                    updateCell(sheetRowIndex, 1, e.target.value)
+                                  }
+                                  onFocus={() =>
+                                    isHTML(row[1]) &&
+                                    enableVisualEditor(sheetRowIndex)
+                                  }
                                 />
-                                HTML
-                              </Button>
-                            </Col>
-                          </Form.Row>
-                        )}
-                      </td>
-                    </tr>
-                  ))}
+                              </Col>
+                              <Col xs="auto">
+                                <Button
+                                  variant="outline-primary"
+                                  onClick={() =>
+                                    enableVisualEditor(sheetRowIndex)
+                                  }
+                                >
+                                  <Icon
+                                    path={mdiPencil}
+                                    title="Edit"
+                                    size={1}
+                                    className="mr-1"
+                                  />
+                                  HTML
+                                </Button>
+                              </Col>
+                            </Form.Row>
+                          )}
+                        </td>
+                      </tr>
+                    )
+                  })}
               </tbody>
             </Table>
           </Col>
