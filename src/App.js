@@ -12,11 +12,14 @@ import {
 } from 'react-bootstrap'
 import Icon from '@mdi/react'
 import {
-  mdiPlus,
-  mdiFileUploadOutline,
+  mdiCog,
   mdiFileDownloadOutline,
-  mdiPencil,
+  mdiFileUploadOutline,
   mdiGithub,
+  mdiPencil,
+  mdiPlus,
+  mdiRestart,
+  mdiMonitorEdit,
 } from '@mdi/js'
 import XLSX from 'xlsx'
 
@@ -87,10 +90,11 @@ function VisualEditor(props) {
 function App() {
   const [filename, setFilename] = useState(null)
   const [uploadedWorkbook, setUploadedWorkbook] = useState(null)
-  const [sheet, setSheet] = useState([
+  const DEFAULT_SHEET = [
     ['Key', 'Message'],
     ['', ''],
-  ])
+  ]
+  const [sheet, setSheet] = useState(DEFAULT_SHEET)
   const [rowMetadata, setRowMetadata] = useState({})
 
   window.onbeforeunload = () => true
@@ -207,6 +211,8 @@ function App() {
             <DropdownButton
               className="d-inline-block"
               variant="outline-success"
+              id="downloadDropdown"
+              menuAlign="right"
               title={
                 <>
                   <Icon
@@ -224,6 +230,53 @@ function App() {
               </Dropdown.Item>
               <Dropdown.Item onClick={() => downloadSheet('csv')}>
                 CSV (.csv)
+              </Dropdown.Item>
+            </DropdownButton>{' '}
+            <DropdownButton
+              className="d-inline-block"
+              variant="outline-secondary"
+              id="settingsDropdown"
+              menuAlign="right"
+              bsPrefix=""
+              title={
+                <>
+                  <Icon
+                    path={mdiCog}
+                    title="Settings"
+                    size={1}
+                    className="mr-1"
+                  />
+                </>
+              }
+            >
+              <Dropdown.Item
+                onClick={() =>
+                  setRowMetadata(
+                    sheet &&
+                      Array(sheet.slice(1).length)
+                        .fill({ html: true })
+                        .reduce((acc, value, index) => {
+                          acc[index + 1] = value
+                          return acc
+                        }, {})
+                  )
+                }
+              >
+                <Icon path={mdiMonitorEdit} size={1} className="mr-1" />
+                Edit all as HTML
+              </Dropdown.Item>
+              <Dropdown.Divider />
+              <Dropdown.Item
+                className="text-danger"
+                onClick={() => {
+                  setFilename(null)
+                  setUploadedWorkbook(null)
+                  setSheet(DEFAULT_SHEET)
+                  setRowMetadata({})
+                }}
+              >
+                <Icon path={mdiRestart} size={1} className="mr-1" />
+                Restart app
               </Dropdown.Item>
             </DropdownButton>
           </Col>
