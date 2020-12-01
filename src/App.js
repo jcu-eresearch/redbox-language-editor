@@ -245,7 +245,7 @@ function App() {
                     return (
                       <tr key={sheetRowIndex}>
                         <td className="text-center">
-                          <code>{sheetRowIndex}</code>
+                          <code>{sheetRowIndex + 1}</code>
                         </td>
                         <td>
                           <Form.Control
