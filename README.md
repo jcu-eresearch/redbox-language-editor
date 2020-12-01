@@ -5,6 +5,17 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 This project automatically deploys itself to GitHub Pages via GitHub Actions
 to be hosted at https://jcu-eresearch.github.io/redbox-language-editor/.
 
+## Features
+
+* Import 2-column key-value spreadsheets or CSV language files
+* Automatically enables TinyMCE visual WYSIWYG editor when HTML is detected, or manually enable
+  when HTML is wanted
+* Ability to download results as Excel or CSV files
+* Runs fully in browser - no server side code!
+* Automatic cleanup of HTML in messages on editing single fields or the whole document
+* Bootstrap 4 themed: currently uses [JCU CookBook](https://github.com/jcu/cookbook) for theming
+  but works with any theme compatible with [react-bootstrap](react-bootstrap.github.io/)
+
 ## Setup
 
 Clone this repository and run `yarn` to set up the environment.
