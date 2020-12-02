@@ -263,11 +263,11 @@ function App() {
             >
               <Dropdown.Item onClick={() => changeAllEditors(true)}>
                 <Icon path={mdiMonitorEdit} size={1} className="mr-1" />
-                Edit all as HTML
+                Edit all as rich HTML
               </Dropdown.Item>
               <Dropdown.Item onClick={() => changeAllEditors(false)}>
                 <Icon path={mdiFormTextbox} size={1} className="mr-1" />
-                Edit all as text
+                Edit all as labels
               </Dropdown.Item>
               <Dropdown.Divider />
               <Dropdown.Item
