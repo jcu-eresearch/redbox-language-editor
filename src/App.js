@@ -57,7 +57,7 @@ function VisualEditor(props) {
         //content_css:
         //  'https://cdn.jcu.edu.au/cookbook/2.0/css/cookbook.min.css,https://cdn.jcu.edu.au/cookbook/2.0/css/fonts.min.css',
         //content_css_cors: true,
-        content_style: 'body { font-family: sans-serif; }',
+        content_style: `body { font-family: sans-serif; }`,
         max_height: '20rem',
         autoresize_bottom_margin: 0,
         body_class: '',
@@ -82,6 +82,30 @@ function VisualEditor(props) {
         ],
         toolbar:
           'undo redo searchreplace | formatselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link | removeformat | code | help',
+        help_tabs: [
+          {
+            name: 'languageeditor',
+            title: 'About This App',
+            items: [
+              {
+                type: 'htmlpanel',
+                html: `
+                <p>This editor is for modifying messages used in ReDBox language files.</p>
+                <p>This visual HTML editor is configured to work for:</p>
+                <ul>
+                  <li><strong>Labels</strong>: simple text-based messages which are typically short, single-line strings (allowed content are <strong>bold</strong>, <em>italic</em> and <a href="#">linked text</a>), and</li>
+                  <li><strong>Rich HTML:</strong> more complicated messages that contain multiple paragraphs, styling, headings, bullets, numbering and more.</li>
+                </ul>
+                <p>Because this visual HTML editor needs to work for both types of message, hitting <kbd>Enter</kbd> or <kbd>Return</kbd> will insert a Line Break (<code>&lt;br&gt;</code>) rather than a new Paragraph (<code>&lt;p&gt;</code>). To create a new paragraph, use <kbd>Shift</kbd> + <kbd>Enter/Return</kbd> when entering text.</p>
+                <p>Other help documentation for this visual editor, including shortcuts, is available from the links in this Help panel.</p>
+                `,
+              },
+            ],
+          },
+          'shortcuts',
+          'keyboardnav',
+          'plugins',
+        ],
       }}
       {...props}
     />
