@@ -20,6 +20,7 @@ import {
   mdiPlus,
   mdiRestart,
   mdiMonitorEdit,
+  mdiFormTextbox,
 } from '@mdi/js'
 import XLSX from 'xlsx'
 
@@ -119,6 +120,12 @@ function App() {
       reader.readAsBinaryString(file)
     }
   }
+  const enableVisualEditor = row => {
+    setRowMetadata(prevState => ({
+      ...prevState,
+      [row]: { html: true },
+    }))
+  }
   const updateCell = (row, column, value) => {
     setSheet(prevState => {
       const newState = [...prevState]
@@ -129,13 +136,18 @@ function App() {
       enableVisualEditor(row)
     }
   }
-
-  const enableVisualEditor = row => {
-    setRowMetadata(prevState => ({
-      ...prevState,
-      [row]: { html: true },
-    }))
-  }
+  const changeAllEditors = value =>
+    value
+      ? setRowMetadata(
+          sheet &&
+            Array(sheet.slice(1).length)
+              .fill({ html: true })
+              .reduce((acc, value, index) => {
+                acc[index + 1] = value
+                return acc
+              }, {})
+        )
+      : setRowMetadata({})
 
   const downloadSheet = type => {
     const worksheet = XLSX.utils.aoa_to_sheet(sheet)
@@ -249,21 +261,13 @@ function App() {
                 </>
               }
             >
-              <Dropdown.Item
-                onClick={() =>
-                  setRowMetadata(
-                    sheet &&
-                      Array(sheet.slice(1).length)
-                        .fill({ html: true })
-                        .reduce((acc, value, index) => {
-                          acc[index + 1] = value
-                          return acc
-                        }, {})
-                  )
-                }
-              >
+              <Dropdown.Item onClick={() => changeAllEditors(true)}>
                 <Icon path={mdiMonitorEdit} size={1} className="mr-1" />
                 Edit all as HTML
+              </Dropdown.Item>
+              <Dropdown.Item onClick={() => changeAllEditors(false)}>
+                <Icon path={mdiFormTextbox} size={1} className="mr-1" />
+                Edit all as text
               </Dropdown.Item>
               <Dropdown.Divider />
               <Dropdown.Item
