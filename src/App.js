@@ -54,6 +54,7 @@ function VisualEditor(props) {
     <Editor
       init={{
         skin: false,
+        content_css: false,
         //content_css:
         //  'https://cdn.jcu.edu.au/cookbook/2.0/css/cookbook.min.css,https://cdn.jcu.edu.au/cookbook/2.0/css/fonts.min.css',
         //content_css_cors: true,
