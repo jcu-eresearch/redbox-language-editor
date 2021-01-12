@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/redbox-language-editor/static/css/main.e28959f8.chunk.css",
-    "main.js": "/redbox-language-editor/static/js/main.672e996f.chunk.js",
-    "main.js.map": "/redbox-language-editor/static/js/main.672e996f.chunk.js.map",
+    "main.js": "/redbox-language-editor/static/js/main.c3dd262e.chunk.js",
+    "main.js.map": "/redbox-language-editor/static/js/main.c3dd262e.chunk.js.map",
     "runtime-main.js": "/redbox-language-editor/static/js/runtime-main.b9bd6d6d.js",
     "runtime-main.js.map": "/redbox-language-editor/static/js/runtime-main.b9bd6d6d.js.map",
     "static/css/2.be8b980b.chunk.css": "/redbox-language-editor/static/css/2.be8b980b.chunk.css",
-    "static/js/2.d46aa83f.chunk.js": "/redbox-language-editor/static/js/2.d46aa83f.chunk.js",
-    "static/js/2.d46aa83f.chunk.js.map": "/redbox-language-editor/static/js/2.d46aa83f.chunk.js.map",
+    "static/js/2.a5a8c9f9.chunk.js": "/redbox-language-editor/static/js/2.a5a8c9f9.chunk.js",
+    "static/js/2.a5a8c9f9.chunk.js.map": "/redbox-language-editor/static/js/2.a5a8c9f9.chunk.js.map",
     "index.html": "/redbox-language-editor/index.html",
     "static/css/2.be8b980b.chunk.css.map": "/redbox-language-editor/static/css/2.be8b980b.chunk.css.map",
     "static/css/main.e28959f8.chunk.css.map": "/redbox-language-editor/static/css/main.e28959f8.chunk.css.map",
-    "static/js/2.d46aa83f.chunk.js.LICENSE.txt": "/redbox-language-editor/static/js/2.d46aa83f.chunk.js.LICENSE.txt"
+    "static/js/2.a5a8c9f9.chunk.js.LICENSE.txt": "/redbox-language-editor/static/js/2.a5a8c9f9.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.b9bd6d6d.js",
     "static/css/2.be8b980b.chunk.css",
-    "static/js/2.d46aa83f.chunk.js",
+    "static/js/2.a5a8c9f9.chunk.js",
     "static/css/main.e28959f8.chunk.css",
-    "static/js/main.672e996f.chunk.js"
+    "static/js/main.c3dd262e.chunk.js"
   ]
 }
