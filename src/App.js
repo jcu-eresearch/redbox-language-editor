@@ -40,6 +40,8 @@ import 'tinymce/plugins/paste'
 import 'tinymce/plugins/help'
 import { Editor } from '@tinymce/tinymce-react'
 
+import { version } from '../package.json'
+
 import 'tinymce/skins/ui/oxide/skin.css'
 import 'tinymce/skins/ui/oxide/content.inline.css'
 import './App.css'
@@ -400,7 +402,7 @@ function App() {
                   JCU eResearch Centre
                 </a>
               </li>
-              <li className="list-inline-item">
+              <li className="list-inline-item mr-2 pr-2 border-right">
                 <a href="https://github.com/jcu-eresearch/redbox-language-editor">
                   <Icon
                     path={mdiGithub}
@@ -411,6 +413,7 @@ function App() {
                   Source code
                 </a>
               </li>
+              <li className="list-inline-item">v{version}</li>
             </ul>
           </Col>
         </Row>
