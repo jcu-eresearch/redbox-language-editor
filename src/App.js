@@ -393,14 +393,14 @@ function App() {
         </Row>
         <Row as="footer" className="pt-3 border-top">
           <Col className="text-center text-muted">
-            <ul class="list-inline">
-              <li class="list-inline-item mr-2 pr-2 border-right">
+            <ul className="list-inline">
+              <li className="list-inline-item mr-2 pr-2 border-right">
                 Made by the{' '}
                 <a href="https://github.com/jcu-eresearch">
                   JCU eResearch Centre
                 </a>
               </li>
-              <li class="list-inline-item">
+              <li className="list-inline-item">
                 <a href="https://github.com/jcu-eresearch/redbox-language-editor">
                   <Icon
                     path={mdiGithub}
