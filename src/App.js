@@ -54,10 +54,10 @@ function VisualEditor(props) {
     <Editor
       init={{
         skin: false,
-        //content_css:
-        //  'https://cdn.jcu.edu.au/cookbook/2.0/css/cookbook.min.css,https://cdn.jcu.edu.au/cookbook/2.0/css/fonts.min.css',
-        //content_css_cors: true,
-        content_style: `body { font-family: sans-serif; }`,
+        content_css:
+          'https://cdn.jcu.edu.au/web-framework/1.0.0-beta.1/css/jcu.min.css',
+        content_css_cors: true,
+        content_style: `body { background: #fff; margin: .75rem; }`,
         max_height: '20rem',
         autoresize_bottom_margin: 0,
         body_class: '',
