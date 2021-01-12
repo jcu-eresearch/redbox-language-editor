@@ -1,5 +1,7 @@
 # ReDBox Language Editor
 
+![example workflow name](https://github.com/jcu-eresearch/redbox-language-editor/workflows/Deploy-GitHubPages/badge.svg)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 This project automatically deploys itself to GitHub Pages via GitHub Actions
