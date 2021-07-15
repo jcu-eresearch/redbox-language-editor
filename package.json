@@ -5,46 +5,63 @@
   "private": true,
   "license": "MIT",
   "dependencies": {
-    "@mdi/js": "^5.8.55",
-    "@mdi/react": "^1.4.0",
-    "@testing-library/jest-dom": "^5.11.8",
-    "@testing-library/react": "^11.2.3",
-    "@testing-library/user-event": "^12.6.0",
-    "@tinymce/tinymce-react": "^3.9.0",
-    "gh-pages": "^3.1.0",
-    "react": "^17.0.1",
-    "react-bootstrap": "^1.4.3",
-    "react-dom": "^17.0.1",
-    "react-scripts": "4.0.1",
-    "web-vitals": "^1.0.1",
-    "xlsx": "^0.16.9"
+    "@mdi/js": "^5.9.55",
+    "@mdi/react": "^1.5.0",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.0.0",
+    "@testing-library/user-event": "^13.1.9",
+    "@tinymce/tinymce-react": "^3.12.6",
+    "gh-pages": "^3.2.3",
+    "react": "^17.0.2",
+    "react-bootstrap": "^1.6.1",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3",
+    "xlsx": "^0.17.0"
   },
   "devDependencies": {
-    "husky": "^4.3.7",
-    "lint-staged": "^10.5.3",
-    "prettier": "^2.2.1"
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.30.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-react-app": "^6.0.0",
+    "eslint-plugin-flowtype": "^5.8.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jest": "^24.3.6",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-testing-library": "^4.9.0",
+    "husky": "^7.0.1",
+    "lint-staged": "^11.0.1",
+    "prettier": "^2.3.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build/",
+    "lint": "eslint --cache --fix ./src && prettier --write ./src ./public",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "yarn run build",
-    "deploy": "gh-pages -d build/"
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint --cache --fix",
+      "prettier --write"
+    ],
+    "*.{json,html,scss,css,md}": "prettier --write"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
+      "react-app/jest",
+      "plugin:jsx-a11y/recommended",
+      "plugin:react-hooks/recommended",
+      "prettier"
+    ],
+    "plugins": [
+      "jsx-a11y"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{js,jsx,json,html,scss,css,md}": "prettier --write"
   },
   "prettier": {
     "singleQuote": true,

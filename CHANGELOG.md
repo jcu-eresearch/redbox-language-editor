@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Added changelog
+
+### Changed
+
+- **BREAKING**: Upgraded dependencies, which affect minimum Node version
+- Linted codebase
+
 ## [1.0.0] - 2021-01-12
 
 ### Added
