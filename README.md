@@ -1,5 +1,9 @@
 # ReDBox Language Editor
 
+[![Deployment on GitHub Pages](https://github.com/jcu-eresearch/redbox-language-editor/workflows/Deploy-GitHubPages/badge.svg)](https://github.com/jcu-eresearch/redbox-language-editor/actions?query=workflow%3ADeploy-GitHubPages)
+
+This is a graphical editor for ReDBox's language spreadsheets, in use by Research Data JCU.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 This project automatically deploys itself to GitHub Pages via GitHub Actions
