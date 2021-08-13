@@ -57,7 +57,7 @@ function VisualEditor(props) {
       init={{
         skin: false,
         content_css:
-          'https://cdn.jcu.edu.au/web-framework/1.0.0-beta.1/css/jcu.min.css',
+          'https://cdn.jcu.edu.au/cookbook/3.0/css/cookbook.min.css',
         content_css_cors: true,
         content_style: `body { background: #fff; margin: .75rem; }`,
         max_height: '20rem',
@@ -204,7 +204,7 @@ function App() {
                 })
               }}
             >
-              <Icon path={mdiPlus} title="Add" size={1} className="mr-1" />
+              <Icon path={mdiPlus} title="Add" size={1} className="me-1" />
               Add row
             </Button>
           </Col>
@@ -214,7 +214,7 @@ function App() {
             className="text-center"
           >
             <h1 className="h6 mb-lg-0">
-              <span className="font-weight-bold">Visual Language Editor</span>
+              <span className="fw-bold">Visual Language Editor</span>
               {filename && (
                 <>
                   : <code>{filename}</code>
@@ -234,7 +234,7 @@ function App() {
                     path={mdiFileUploadOutline}
                     title="Upload"
                     size={1}
-                    className="mr-1"
+                    className="me-1"
                   />
                   Upload spreadsheet
                 </span>
@@ -257,7 +257,7 @@ function App() {
                     path={mdiFileDownloadOutline}
                     title="Download"
                     size={1}
-                    className="mr-1"
+                    className="me-1"
                   />
                   Download
                 </>
@@ -282,17 +282,17 @@ function App() {
                     path={mdiCog}
                     title="Settings"
                     size={1}
-                    className="mr-1"
+                    className="me-1"
                   />
                 </>
               }
             >
               <Dropdown.Item onClick={() => changeAllEditors(true)}>
-                <Icon path={mdiMonitorEdit} size={1} className="mr-1" />
+                <Icon path={mdiMonitorEdit} size={1} className="me-1" />
                 Edit all as rich HTML
               </Dropdown.Item>
               <Dropdown.Item onClick={() => changeAllEditors(false)}>
-                <Icon path={mdiFormTextbox} size={1} className="mr-1" />
+                <Icon path={mdiFormTextbox} size={1} className="me-1" />
                 Edit all as labels
               </Dropdown.Item>
               <Dropdown.Divider />
@@ -305,7 +305,7 @@ function App() {
                   setRowMetadata({})
                 }}
               >
-                <Icon path={mdiRestart} size={1} className="mr-1" />
+                <Icon path={mdiRestart} size={1} className="me-1" />
                 Restart app
               </Dropdown.Item>
             </DropdownButton>
@@ -352,7 +352,7 @@ function App() {
                               }
                             />
                           ) : (
-                            <Form.Row>
+                            <Row>
                               <Col>
                                 <Form.Control
                                   type="text"
@@ -378,12 +378,12 @@ function App() {
                                     path={mdiPencil}
                                     title="Edit"
                                     size={1}
-                                    className="mr-1"
+                                    className="me-1"
                                   />
                                   HTML
                                 </Button>
                               </Col>
-                            </Form.Row>
+                            </Row>
                           )}
                         </td>
                       </tr>
@@ -396,19 +396,19 @@ function App() {
         <Row as="footer" className="pt-3 border-top">
           <Col className="text-center text-muted">
             <ul className="list-inline">
-              <li className="list-inline-item mr-2 pr-2 border-right">
+              <li className="list-inline-item me-2 pe-2 border-right">
                 Made by the{' '}
                 <a href="https://github.com/jcu-eresearch">
                   JCU eResearch Centre
                 </a>
               </li>
-              <li className="list-inline-item mr-2 pr-2 border-right">
+              <li className="list-inline-item me-2 pe-2 border-right">
                 <a href="https://github.com/jcu-eresearch/redbox-language-editor">
                   <Icon
                     path={mdiGithub}
                     title="GitHub"
                     size={1}
-                    className="mr-1"
+                    className="me-1"
                   />
                   Source code
                 </a>
